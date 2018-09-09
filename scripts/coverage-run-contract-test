@@ -1,0 +1,13 @@
+#/bin/bash
+
+# write out .solcover.js
+SCRIPT_PATH=`dirname $0`
+cat << EOF > $SCRIPT_PATH/../.solcover.js
+// This file is written by ./scripts/coverage-run-auction-test
+module.exports = {
+    port: 8555,
+    norpc: true
+};
+EOF
+
+./node_modules/.bin/solidity-coverage
