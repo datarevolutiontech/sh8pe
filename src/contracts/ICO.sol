@@ -1,8 +1,8 @@
 pragma solidity ^0.4.18;
 
-import "./Token.sol";
+import "./Sh8pe.sol";
 
-contract ICO is Token {
+contract ICO is Sh8pe {
     using SafeMath for uint256;
 
     uint256 private constant MARCH_15_2018 = 1521072000;

@@ -26,7 +26,7 @@ contract Sh8pe is ERC20, Ownable {
     }
 
     function transfer(address to, uint256 value) public returns (bool) {
-        require(balances[msg.sender] >= value);
+        require(balances[msg.sender] >= value, "Insufficent balance");
 
         balances[msg.sender] = balances[msg.sender].sub(value);
         balances[to] = balances[to].add(value);
@@ -42,7 +42,7 @@ contract Sh8pe is ERC20, Ownable {
         allowed[from][msg.sender] = allowed[from][msg.sender].sub(value);
         balances[to] = balances[to].add(value);
 
-        Transfer(from, to, value);
+        emit Transfer(from, to, value);
         return true;
     }
 
