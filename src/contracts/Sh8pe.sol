@@ -4,13 +4,13 @@ import "./ERC20.sol";
 import "./Ownable.sol";
 import "./SafeMath.sol";
 
-contract Sh8pe is Ownable {
+contract Sh8pe is ERC20, Ownable {
     using SafeMath for uint;
 
     string public name = "Sh8pe";
     string public symbol = "Sh8pe";
     uint8 public decimals = 18;
-    uint256 public totalSupply = 0;
+    uint256 public totalSupply = 100000000;
 
     address private owner;
 
@@ -18,7 +18,7 @@ contract Sh8pe is Ownable {
     mapping (address => mapping (address => uint256)) allowed;
 
     constructor () public {
-        balances[msg.sender] = 0;
+        balances[msg.sender] = totalSupply;
     }
 
     function balanceOf(address who) public view returns (uint256) {
@@ -54,7 +54,4 @@ contract Sh8pe is Ownable {
         emit Approval(msg.sender, spender, amount);
         return true;
     }
-
-    event Approval(address indexed owner, address indexed spender, uint256 value);
-    event Transfer(address indexed from, address indexed to, uint256 value);
 }
