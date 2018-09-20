@@ -7,8 +7,8 @@ import "./SafeMath.sol";
 contract Sh8pe is ERC20, Ownable {
     using SafeMath for uint;
 
-    string public name = "Sh8pe";
-    string public symbol = "Sh8pe";
+    string public name = "Sh8pe Angel Token";
+    string public symbol = "SH8PE";
     uint8 public decimals = 18;
     uint256 public totalSupply = 100000000;
 
