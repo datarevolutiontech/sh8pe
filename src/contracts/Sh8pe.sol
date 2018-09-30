@@ -3,8 +3,9 @@ pragma solidity ^0.4.24;
 import "./ERC20.sol";
 import "./Ownable.sol";
 import "./SafeMath.sol";
+import "./WhiteList.sol";
 
-contract Sh8pe is ERC20, Ownable {
+contract Sh8pe is ERC20, Ownable, WhiteList {
     using SafeMath for uint;
 
     string public name = "Sh8pe Angel Token";
@@ -26,6 +27,7 @@ contract Sh8pe is ERC20, Ownable {
     }
 
     function transfer(address to, uint256 value) public returns (bool) {
+        require(isWhiteListed(msg.sender) == true, "Not white listed");
         require(balances[msg.sender] >= value, "Insufficent balance");
 
         balances[msg.sender] = balances[msg.sender].sub(value);
