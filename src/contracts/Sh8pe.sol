@@ -28,7 +28,7 @@ contract Sh8pe is ERC20, Ownable, WhiteList {
 
     function transfer(address to, uint256 value) public returns (bool) {
         require(isWhiteListed(msg.sender) == true, "Not white listed");
-        require(balances[msg.sender] >= value, "Insufficent balance");
+        require(balances[msg.sender] >= value, "Insufficient balance");
 
         balances[msg.sender] = balances[msg.sender].sub(value);
         balances[to] = balances[to].add(value);
@@ -38,7 +38,7 @@ contract Sh8pe is ERC20, Ownable, WhiteList {
     }
 
     function transferFrom(address from, address to, uint256 value) public returns (bool) {
-        require(balances[from] >= value && allowed[from][msg.sender] >= value && balances[to] + value >= balances[to]);
+        require(balances[from] >= value && allowed[from][msg.sender] >= value && balances[to] + value >= balances[to], "Insufficient balance");
 
         balances[from] = balances[from].sub(value);
         allowed[from][msg.sender] = allowed[from][msg.sender].sub(value);
@@ -49,8 +49,7 @@ contract Sh8pe is ERC20, Ownable, WhiteList {
     }
 
     function approve(address spender, uint256 amount) public returns (bool) {
-        require(spender != address(0));
-        require(allowed[msg.sender][spender] == 0 || amount == 0);
+        require(spender != address(0), "Invalid address");
 
         allowed[msg.sender][spender] = amount;
         emit Approval(msg.sender, spender, amount);
