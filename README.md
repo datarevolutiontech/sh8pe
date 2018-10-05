@@ -1,4 +1,4 @@
-# ICO Terms Data Sheet
+# Token Terms Data Sheet
 
 **Disclaimer**
 
@@ -17,66 +17,7 @@ ERC20 Fields
 | Name         | Sh8pe Token |                                                                                        |
 | Ticker       | Sh8pe       |                                                                                        |
 | Decimals     | 18          | Default= 18 (‘soft standard’ reflecting rough proportional parity between WEI and ETH) |
-| Total Supply | 100,000,000 | Tokens remaining unsold after ICO sale (and allocations, below) will be burnt.         |
-
-Allocations
-===========
-
-ICO smart contracts allow the allocation of ERC20 tokens to individuals or
-groups, such as developers or sale participants.  They may also implement
-conditions affecting the transferability of tokens, up to and/or between
-nominated dates
-
-| **Name**                  | **Calculation**                 | **Public Key** | **Restrictions**        |
-|---------------------------|---------------------------------|----------------|-------------------------|
-| Founders                  | 8% of total Issued at ICO close | 0x00 TBA       | Issue date plus 3 years |
-| Invoice Verification Fund | 8% of total Issued at ICO close | 0x00 TBA       | No restriction          |
-| Advisor’s Allocation      | TBA                             | 0x00 TBA       | TBA                     |
-
-Sale Parameters
-===============
-
-Quantity
---------
-
-| **Index** | **Event**   | **Max Supply** | **Round Start GMT**  | **Round Start EPOCH** | **Round End GMT**    | **Round End EPOCH** | **Token Bonus [%]** |
-|-----------|-------------|----------------|----------------------|-----------------------|----------------------|---------------------|---------------------|
-| 0         | Presale     | NONE           | 2018-03-15 T00:00:00 | 1521072000            | 2018-03-31 T00:00:00 | 1522454400          | 50                  |
-| 1        | Angel Day   | NONE           | 2018-04-16 T00:00:00 | 1523836800            | 2018-04-17 T00:00:00 | 1523923200          | 40                  |
-| 2        | ICO Stage 1 | NONE           | 2018-04-17 T00:00:00 | 1523923200            | 2018-04-26 T00:00:00 | 1524700800          | 30          
-
-Pricing
--------
-
-| Token Value | 0.0000625 | 1 Token = (0.xx ETH) |
-|-------------|-----------|----------------------|
-
-
-Caps
-----
-
-| Type    | Value | Description |
-|-------------|--------|---------------------------------------------------------------------|
-| Minimum Buy | ETH0.1 | 0.xx ETH or "NONE"                                                 |
-| Maximum Buy | NONE   | 0.xx ETH or “NONE”                                                  |
-| Soft Cap    | NONE   | Min ETH target or Refund invoked, “None” implies no refunds allowed |
-
-Withdrawal Requirements 
-------------------------
-
-Conditional disbursement of ETH from smart contract.
-
-| Type    | Value | Description |
-|------------------------|---------|--------------------------------------------------------|
-| Withdraw Lock Time     | 14 days | Withdrawal/s restricted until *n* days after sale ends |
-| Withdraw Amount        | 100%    | Percentage of total escrow holding to be withdrawn     |
-| Withdrawal Destination | TBA     | SINGLE address for Hardware wallet                     |
-
-Refunds
--------
-
-| Refund | NONE | “NONE” |
-|--------|------|--------|
+| Total Supply | 100,000,000 | Total tokens in circulation.         |
 
 
 **Appendix**
