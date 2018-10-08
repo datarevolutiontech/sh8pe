@@ -1,25 +1,29 @@
 pragma solidity ^0.4.24;
 
-import "./ERC20.sol";
 import "./Ownable.sol";
 import "./SafeMath.sol";
 import "./WhiteList.sol";
 
-contract Sh8pe is ERC20, Ownable, WhiteList {
+contract Sh8pe is Ownable, WhiteList {
     using SafeMath for uint;
 
-    string public name = "Sh8pe Angel Token";
-    string public symbol = "SH8PE";
-    uint8 public decimals = 18;
-    uint256 public totalSupply = 100000000;
-
-    address private owner;
+    string public name;
+    string public symbol;
+    uint8 public decimals;
+    uint256 public totalSupply;
 
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
 
     constructor () public {
+
+        name = "Sh8pe Angel Token";
+        symbol = "SH8PE";
+        decimals = 18;
+        totalSupply = 100000000;
+
         balances[msg.sender] = totalSupply;
+        emit Transfer(this, msg.sender, totalSupply);
     }
 
     function balanceOf(address who) public view returns (uint256) {
@@ -55,4 +59,7 @@ contract Sh8pe is ERC20, Ownable, WhiteList {
         emit Approval(msg.sender, spender, amount);
         return true;
     }
+
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Transfer(address indexed from, address indexed to, uint256 value);
 }

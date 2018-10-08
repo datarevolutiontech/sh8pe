@@ -19,6 +19,9 @@ ERC20 Fields
 | Decimals     | 18          | Default= 18 (‘soft standard’ reflecting rough proportional parity between WEI and ETH) |
 | Total Supply | 100,000,000 | Total tokens in circulation.         |
 
+**PHP Integration
+
+
 
 **Appendix**
 
